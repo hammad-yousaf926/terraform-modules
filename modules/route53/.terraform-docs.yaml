@@ -1,0 +1,29 @@
+formatter: "markdown"
+
+output:
+  file: "README.md"
+  mode: "inject"
+
+content: |
+  {{ .Resources }}
+
+  {{ .Providers }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
+
+settings:
+  anchor: false
+  description: true
+  hide-empty: true
+  html: false
+
+terraform-docs:
+  command: "markdown table"
+  args:
+    - "--output-file"
+    - "README.md"
+    - "--output-mode"
+    - "inject"
+    - "./"
